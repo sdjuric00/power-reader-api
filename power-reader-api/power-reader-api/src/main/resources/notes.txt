@@ -1,0 +1,30 @@
+
+####KOMANDA ZA DOCKER KONTEJNER#####
+
+docker run -d --name timescaledb -p 127.0.0.1:5434:5432 -e POSTGRES_PASSWORD=password timescale/timescaledb:latest-pg14
+
+
+####KONEKCIJA SA BAZOM PUTEM TERMINALA#####
+
+psql -p 5434 -h localhost -U postgres
+
+\l -> prikaz tabela
+\c name -> redirection
+\q -> izlaz
+
+##kreiranje hiper tabele###
+CREATE TABLE sensor_readings (
+            id SERIAL,
+            timestamp timestamptz NOT NULL,
+            value numeric NOT NULL,
+            source_type text NOT NULL,
+            measurement_type text NOT NULL,
+            PRIMARY KEY (id, timestamp)
+);
+
+SELECT create_hypertable('sensor_readings', 'timestamp', chunk_time_interval => interval '1 day');
+
+##Testne komande
+
+SELECT * FROM sensor_readings WHERE time_bucket('1 day', timestamp) = '2023-10-17 00:00:00+00';
+SELECT count(*) FROM public.sensor_readings;
