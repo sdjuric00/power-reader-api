@@ -31,7 +31,7 @@ public class KafkaConsumer {
         processData(sensorReading);
     }
 
-    //Checks if read message is in valid format, create logs if not
+    //Checks if read message is in a valid format, creates logs otherwise
     private void processData(HashMap<String, String> sensorReading) {
         SensorReadingMessage sensorReadingMessage = null;
         try {
