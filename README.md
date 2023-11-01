@@ -9,9 +9,9 @@
   <br/>
   • <a href="#">Software Engineering Internship Project</a>
   •
-  <!-- <br/>
-  • <a href="https://www.youtube.com/watch?v=opQ08rgMkDQ&ab_channel=SrdjanDjuric">Demo Video YT</a>
-  • -->
+  <br/>
+  • <a href="https://www.youtube.com/watch?v=yC2yRs0P9jc&ab_channel=SrdjanDjuric">Demo Video YT</a>
+  •
 </p>
 
 

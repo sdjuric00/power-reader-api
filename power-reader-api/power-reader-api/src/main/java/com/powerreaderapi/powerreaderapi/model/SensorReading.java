@@ -43,5 +43,17 @@ public class SensorReading {
         this.deviceId = deviceId;
     }
 
+    public SensorReading(
+            double value,
+            MeasurementType measurementType,
+            Long deviceId,
+            Timestamp timestamp
+    ) {
+        this.value = value;
+        this.measurementType = measurementType;
+        this.deviceId = deviceId;
+        this.timestamp = timestamp;
+    }
+
 
 }

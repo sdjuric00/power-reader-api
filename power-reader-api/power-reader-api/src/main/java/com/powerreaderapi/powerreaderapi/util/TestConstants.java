@@ -4,6 +4,9 @@ import com.powerreaderapi.powerreaderapi.model.SensorReading;
 import com.powerreaderapi.powerreaderapi.model.enums.MeasurementType;
 import com.powerreaderapi.powerreaderapi.request.SensorReadingMessage;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 public class TestConstants {
 
     public static final Long DEVICE_NOT_EXIST_ID = -1L;
@@ -16,7 +19,7 @@ public class TestConstants {
             DEVICE_EXIST_ID, MeasurementType.W, 2
     );
     public static final SensorReading SENSOR_READING = new SensorReading(
-            1.1, MeasurementType.W, DEVICE_EXIST_ID
+            1.1, MeasurementType.W, DEVICE_EXIST_ID, Timestamp.valueOf(LocalDateTime.now())
     );
 
 }
